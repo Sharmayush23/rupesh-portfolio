@@ -31,10 +31,10 @@ const skills = [
 
 const experience = [
   {
-    role: "Visual Storyteller",
+    role: "Social Media Manager",
     company: "Mafia",
     period: "2025 - Present",
-    desc: "Crafting high-end visual narratives and digital content, pushing the boundaries of creative direction and graphic design."
+    desc: "Managing high-end social media narratives and digital content, driving brand growth and creative direction."
   },
   {
     role: "Graphic Designer",
