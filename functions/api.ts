@@ -1,5 +1,13 @@
 import serverless from "serverless-http";
-import { app } from "../server/app";
+import { app, init } from "../server/app";
 
-// The app in server/app.ts already has middleware and routes registered.
-export const handler = serverless(app);
+let initialized = false;
+const serverlessHandler = serverless(app);
+
+export const handler = async (event: any, context: any) => {
+    if (!initialized) {
+        await init();
+        initialized = true;
+    }
+    return serverlessHandler(event, context);
+};

@@ -1,7 +1,9 @@
-import { app, httpServer, log } from "./app";
+import { app, httpServer, log, init } from "./app";
 import { serveStatic } from "./static";
 
 (async () => {
+  await init();
+
   if (process.env.NODE_ENV === "production") {
     // In local production mode (e.g. npm start), we serve static files.
     // NOTE: On Netlify, this file (index.ts) is NOT used, and static files 

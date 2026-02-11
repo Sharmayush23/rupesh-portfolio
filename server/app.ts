@@ -73,9 +73,9 @@ app.use((err: any, _req: Request, res: Response, next: NextFunction) => {
     return res.status(status).json({ message });
 });
 
-// Initialize routes immediately as this file is the clean entry point
-(async () => {
+// Initialize routes
+export async function init() {
     await registerRoutes(httpServer, app);
-})();
+}
 
 export { app, httpServer };
